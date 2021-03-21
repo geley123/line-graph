@@ -20,7 +20,6 @@
 }
 .xLabel {
   text-anchor: start;
-  text-align: ;
 }
 .line {
   stroke-width: 1;
@@ -45,4 +44,13 @@
 }
 .key-logo img {
   width: 2rem;
+}
+.key label {
+  cursor: pointer;
+}
+.hidden {
+  visibility: hidden;
+}
+.fade {
+  opacity: 0.5;
 }

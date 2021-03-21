@@ -13,5 +13,3 @@ export const graphDimensions = {
   },
 };
 const gHeight = graphDimensions.graphHeight();
-console.log(graphDimensions);
-console.log(gHeight);

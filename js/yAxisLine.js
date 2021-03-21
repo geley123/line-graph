@@ -53,7 +53,6 @@ export const horizontalLines = function () {
   const numLines = numYAxisLines();
   let svg = `<g class='grid'>`;
   for (let n = 0; n < numLines; n++) {
-    console.log(n);
     svg =
       svg +
       `<line x1=${graphDimensions.marginLeft} 

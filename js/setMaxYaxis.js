@@ -8,6 +8,6 @@ export const setMaxYaxis = function (highValue) {
       break;
     }
   }
-  console.log(maxYValue);
+
   return maxYValue;
 };

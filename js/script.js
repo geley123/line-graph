@@ -10,33 +10,36 @@ import { xAxisLine } from "./xAxisLine.js";
 import { drawxAxisValues } from "./xAxisLine.js";
 import { verticalLines } from "./xAxisLine.js";
 import { doKey } from "./key.js";
-
 import { drawDataLines } from "./graphDataLines.js";
 import { svgFooter } from "./svgFooter.js";
 
+const graphContainer = document.getElementById("graph-container");
+
 export { channelData }; //make channel data available to other modules
-
 export { xAxisValues };
-const highValue = getHighValue(); //set highest value
-
-const maxY = setMaxYaxis(highValue);
+let highValue = 0; //set highest value
+let maxY = 0;
 export { maxY };
-
-let svgGraph = `<svg id='graph' class='linegraph' width=${graphDimensions.svgWidth} height=${graphDimensions.svgHeight} version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg'>`;
-
-export { svgGraph };
 export { graphDimensions };
 
-svgGraph = svgGraph + yAxisLine();
-svgGraph = svgGraph + xAxisLine();
-svgGraph = svgGraph + yAxisValues();
-svgGraph = svgGraph + drawxAxisValues();
-svgGraph = svgGraph + horizontalLines();
-svgGraph = svgGraph + drawDataLines();
-svgGraph = svgGraph + verticalLines();
-svgGraph = svgGraph + svgFooter();
-
+export let svgGraph = "";
+export const init = function () {
+  highValue = getHighValue(); //set highest value
+  maxY = setMaxYaxis(highValue);
+  console.log("init");
+  svgGraph = `<svg id='graph' class='linegraph' width=${graphDimensions.svgWidth} height=${graphDimensions.svgHeight} version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg'>`;
+  svgGraph = svgGraph + yAxisLine();
+  svgGraph = svgGraph + xAxisLine();
+  svgGraph = svgGraph + yAxisValues();
+  svgGraph = svgGraph + drawxAxisValues();
+  svgGraph = svgGraph + horizontalLines();
+  svgGraph = svgGraph + drawDataLines();
+  svgGraph = svgGraph + verticalLines();
+  svgGraph = svgGraph + svgFooter();
+  graphContainer.innerHTML = svgGraph;
+};
+init();
 doKey();
 
-document.getElementById("graph-container").innerHTML = svgGraph;
-console.log(svgGraph);
+//document.getElementById("graph-container").innerHTML = svgGraph;
+//console.log(svgGraph);
