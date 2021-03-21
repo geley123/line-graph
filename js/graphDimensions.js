@@ -1,5 +1,5 @@
 export const graphDimensions = {
-  svgWidth: 800,
+  svgWidth: 1000,
   svgHeight: 400,
   marginTop: 50,
   marginRight: 50,
