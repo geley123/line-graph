@@ -33,8 +33,8 @@ export const init = function () {
   svgGraph = svgGraph + yAxisValues();
   svgGraph = svgGraph + drawxAxisValues();
   svgGraph = svgGraph + horizontalLines();
-  svgGraph = svgGraph + drawDataLines();
   svgGraph = svgGraph + verticalLines();
+  svgGraph = svgGraph + drawDataLines();
   svgGraph = svgGraph + svgFooter();
   graphContainer.innerHTML = svgGraph;
 };
