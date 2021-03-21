@@ -1,0 +1,23 @@
+.redBorder {
+  border: solid 1px #f00;
+}
+
+.axis-line {
+  stroke: #000;
+
+  stroke-width: 1;
+}
+.grid {
+  stroke: #ccc;
+  stroke-width: 1;
+}
+.labels {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.8rem;
+}
+.y-labelsLeft {
+  text-anchor: end;
+}
+.line {
+  stroke-width: 1;
+}
