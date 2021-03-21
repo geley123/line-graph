@@ -3,7 +3,9 @@
 import { graphDimensions } from "./script.js";
 import { xAxisValues } from "./script.js";
 
-console.log("ccc" + xAxisValues);
+const numXaxisLines = xAxisValues.length;
+const xSpacing = graphDimensions.graphWidth() / numXaxisLines;
+
 export const xAxisLine = function () {
   const svgGraph1 = `<line class="axis-line" x1=${
     graphDimensions.marginLeft
@@ -15,12 +17,9 @@ export const xAxisLine = function () {
 };
 
 const numberLabels = function () {
-  const a = Math.floor(graphDimensions.graphWidth() / xAxisValues.length);
+  const a = Math.floor(xSpacing);
   const b = 15; // 15 is label width
-  let c = 0; //how many times b goes into a
-
-  console.log("a=" + a);
-  console.log("b=" + b);
+  let c = 0; //how many times a goes into b +1
 
   for (let k = 0; k < 100; k++) {
     if (a * k > b) {
@@ -28,13 +27,10 @@ const numberLabels = function () {
       break;
     }
   }
-
   return c;
 };
 
 export const drawxAxisValues = function () {
-  const numXaxisLines = xAxisValues.length;
-  const xSpacing = graphDimensions.graphWidth() / numXaxisLines;
   let svg = "<g class='labels '>";
   xAxisValues.forEach(function (el, i) {
     if (i % numberLabels() == 0) {
@@ -54,15 +50,20 @@ export const drawxAxisValues = function () {
   return svg;
 };
 
-// svgGraph = svgGraph +=
-//   "<text class='xLabel'  x=" +
-//   (graph_x + horizontalSpacing * k + 5) +
-//   " y=" +
-//   (graph_y + barWidth / 2 + graph_height + 5) +
-//   " transform='rotate(270 " +
-//   (graph_x + horizontalSpacing * k) +
-//   "," +
-//   (graph_y + graph_height) +
-//   ") translate( -10 ,0)'>" +
-//   xAxisArr[k] +
-//   "</text>";
+export const verticalLines = function () {
+  let svg = `<g class='grid'>`;
+  xAxisValues.forEach(function (_, i) {
+    if (i % numberLabels() == 0) {
+      svg =
+        svg +
+        `<line x1='${graphDimensions.marginLeft + xSpacing * i}' x2='${
+          graphDimensions.marginLeft + xSpacing * i
+        }' y1='${graphDimensions.marginTop}' y2='${
+          graphDimensions.marginTop + graphDimensions.graphHeight()
+        }'></line>`;
+    }
+  });
+
+  svg = svg + "</g>";
+  return svg;
+};

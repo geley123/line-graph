@@ -8,6 +8,8 @@ import { yAxisValues } from "./yAxisLine.js";
 import { horizontalLines } from "./yAxisLine.js";
 import { xAxisLine } from "./xAxisLine.js";
 import { drawxAxisValues } from "./xAxisLine.js";
+import { verticalLines } from "./xAxisLine.js";
+
 import { drawDataLines } from "./graphDataLines.js";
 import { svgFooter } from "./svgFooter.js";
 
@@ -30,6 +32,7 @@ svgGraph = svgGraph + yAxisValues();
 svgGraph = svgGraph + drawxAxisValues();
 svgGraph = svgGraph + horizontalLines();
 svgGraph = svgGraph + drawDataLines();
+svgGraph = svgGraph + verticalLines();
 svgGraph = svgGraph + svgFooter();
 
 document.getElementById("graph-container").innerHTML = svgGraph;
