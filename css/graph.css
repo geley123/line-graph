@@ -18,6 +18,31 @@
 .y-labelsLeft {
   text-anchor: end;
 }
+.xLabel {
+  text-anchor: start;
+  text-align: ;
+}
 .line {
   stroke-width: 1;
+}
+
+/* ---------------key -----------*/
+.key {
+  display: flex;
+  margin-left: 50px;
+}
+.key-element {
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+.key-square {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 3px;
+  margin-right: 0.3rem;
+}
+.key-logo img {
+  width: 2rem;
 }
