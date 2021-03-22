@@ -4,7 +4,7 @@ import { graphDimensions } from "./script.js";
 import { xAxisValues } from "./script.js";
 
 const numXaxisLines = xAxisValues.length;
-const xSpacing = graphDimensions.graphWidth() / numXaxisLines;
+const xSpacing = graphDimensions.graphWidth() / (numXaxisLines - 1);
 
 export const xAxisLine = function () {
   const svgGraph1 = `<line class="axis-line" x1=${

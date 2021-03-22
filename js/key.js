@@ -1,5 +1,5 @@
 import { channelData } from "./script.js";
-import { svgGraph } from "./script.js";
+
 import { init } from "./script.js";
 
 const key = document.getElementById("key");
@@ -30,9 +30,6 @@ function setUpChecks() {
   checks.forEach((el) => el.addEventListener("click", onChangeCheck));
 }
 function onChangeCheck(e) {
-  console.log(e.target.id);
-
-  //let img = e.target.previousElementSibling;
   let keyElement = e.target.closest(".key-element");
 
   if (e.target.checked) {
@@ -49,8 +46,4 @@ function onChangeCheck(e) {
 
     init();
   }
-  console.log(channelData);
 }
-// export function OnChangeCheckbox(checkbox) {
-//   console.log("OnChangeCheckbox");
-// }

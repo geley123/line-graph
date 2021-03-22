@@ -8,7 +8,11 @@ export const yAxisLine = function () {
     graphDimensions.marginLeft
   } x2=${graphDimensions.marginLeft} y1=${graphDimensions.marginTop} y2=${
     graphDimensions.marginTop + graphDimensions.graphHeight()
-  }></line>`;
+  }></line> <line class="grid" x1=${
+    graphDimensions.marginLeft + graphDimensions.graphWidth()
+  } x2=${graphDimensions.marginLeft + graphDimensions.graphWidth()} y1=${
+    graphDimensions.marginTop
+  } y2=${graphDimensions.marginTop + graphDimensions.graphHeight()}></line>`;
 
   return svgGraph1;
 };

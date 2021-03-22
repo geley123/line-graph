@@ -6,7 +6,7 @@ import { xAxisValues } from "./script.js";
 export const drawPubliSquares = function () {
   const numXaxisLines = xAxisValues.length; //to be calculated
   const ySpacing = graphDimensions.graphHeight() / maxY;
-  const xSpacing = graphDimensions.graphWidth() / numXaxisLines;
+  const xSpacing = graphDimensions.graphWidth() / (numXaxisLines - 1);
   let svg = `<g class='lines '>`;
   channelData.forEach((_, i) => {
     if (channelData[i].alpha) {
