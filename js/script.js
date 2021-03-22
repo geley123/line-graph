@@ -11,6 +11,7 @@ import { drawxAxisValues } from "./xAxisLine.js";
 import { verticalLines } from "./xAxisLine.js";
 import { doKey } from "./key.js";
 import { drawDataLines } from "./graphDataLines.js";
+import { drawPubliSquares } from "./publi.js";
 import { svgFooter } from "./svgFooter.js";
 
 const graphContainer = document.getElementById("graph-container");
@@ -35,6 +36,7 @@ export const init = function () {
   svgGraph = svgGraph + horizontalLines();
   svgGraph = svgGraph + verticalLines();
   svgGraph = svgGraph + drawDataLines();
+  svgGraph = svgGraph + drawPubliSquares();
   svgGraph = svgGraph + svgFooter();
   graphContainer.innerHTML = svgGraph;
 };

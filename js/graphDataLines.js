@@ -1,9 +1,10 @@
 import { graphDimensions } from "./script.js";
 import { channelData } from "./script.js";
 import { maxY } from "./script.js";
+import { xAxisValues } from "./script.js";
 
 export const drawDataLines = function () {
-  const numXaxisLines = 189; //to be calculated
+  const numXaxisLines = xAxisValues.length; //to be calculated
   const ySpacing = graphDimensions.graphHeight() / maxY;
   const xSpacing = graphDimensions.graphWidth() / numXaxisLines;
   let svg = `<g class='lines '>`;

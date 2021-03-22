@@ -1,6 +1,6 @@
 export const graphDimensions = {
   svgWidth: 1000,
-  svgHeight: 400,
+  svgHeight: 600,
   marginTop: 50,
   marginRight: 50,
   marginBottom: 50,
